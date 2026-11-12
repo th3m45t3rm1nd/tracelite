@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: tracelite
+      POSTGRES_PASSWORD: tracelite
+      POSTGRES_DB: tracelite
+    ports:
+      - "5432:5432"
+    volumes:
+      - tracelite_pgdata:/var/lib/postgresql/data
+
+volumes:
+  tracelite_pgdata:
